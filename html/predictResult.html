@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<!-- <script src="./src-code/TargetUrl.js"></script> -->
+
+		<title>대학 결과 예측 결과</title>
+	</head>
+	<body>
+		<h2>예측 결과는..</h2>
+		<h1 id = "result">??</h1>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			const fullUrl = location;
+			const url = new URL(fullUrl);
+			const id = url.searchParams.get("percent");
+			document.getElementById('result').textContent = "합격률 : " + id + "% /";
+			if(id > 50)
+			{
+				document.getElementById('result').textContent += " 합격~!";
+			}
+			else
+			{
+				document.getElementById('result').textContent += " 불합격...";
+			}
+		}
+	</script>
+</html>

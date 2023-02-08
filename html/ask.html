@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<style>
+			body {
+				background-color: rgb(37, 37, 37);
+				color: white;
+			}
+		</style>
+
+		<title>대학 결과 예측</title>
+	</head>
+	<body>
+		<h1>대학 결과 예측</h1>
+		<hr>
+		<h2>영어 성적 ( 0 ~ 990 )</h2> <input id = "gre">
+		<br><br>
+		<h2>학점 ( 1.0 ~ 9.0 )</h2> <input id = "gpa">
+		<br><br>
+		<h2>지원 대학 수준 ( 1.0 ~ 9.0 )</h2> <input id = "rank">
+		<br><br>
+		<hr>
+		<button onclick='window.location.href = "http://localhost:1001/predict/"+document.getElementById("gre").value+"/"+document.getElementById("gpa").value+"/"+document.getElementById("rank").value'>예측하기</button>
+	</body>
+</html>
