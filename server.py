@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, RedirectResponse
-from fastapi.exceptions import RequestValidationError
 import uvicorn
 from keras.models import load_model
 
@@ -43,7 +42,7 @@ async def predict(gre : str, gpa : str, rank : str):
 			[gre, gpa, rank]
 		])
 		prediction = int(float(prediction[0][0]) * 100)
-		return RedirectResponse(f"http://localhost:1001/result/?percent={prediction}")
+		return RedirectResponse(f"http://nojam.easylab.kr:1001/result/?percent={prediction}")
 	except:
 		return FileResponse('./html/checkPlease.html')
 
